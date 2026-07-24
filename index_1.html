@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Le Royal Kraft — Marble Statues &amp; Handicrafts, Chennai</title>
+<meta name="description" content="Le Royal Kraft — Manufacturer, supplier and exporter of premium marble statues, idols and handicrafts from Chennai, India, since 2003.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --stone-black:#0f0e0c;
+    --marble-white:#f7f3ea;
+    --gold:#c9a15a;
+    --bronze:#8b6f3f;
+    --charcoal:#3a3733;
+    --ivory:#e8dcc0;
+    --stone-black-2:#161410;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--stone-black);
+    color:var(--ivory);
+    font-family:'Jost',sans-serif;
+    font-weight:300;
+    overflow-x:hidden;
+  }
+  h1,h2,h3,.serif{
+    font-family:'Cormorant Garamond',serif;
+    font-weight:500;
+    letter-spacing:.01em;
+  }
+  a{color:inherit;text-decoration:none;}
+  img{max-width:100%;display:block;}
+
+  /* marble vein texture background */
+  .vein-bg{
+    position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.35;
+    background:
+      radial-gradient(ellipse 900px 500px at 15% 10%, rgba(201,161,90,.07), transparent 60%),
+      radial-gradient(ellipse 700px 600px at 85% 80%, rgba(201,161,90,.06), transparent 60%);
+  }
+  .vein-svg{position:fixed;inset:0;z-index:0;opacity:.10;pointer-events:none;}
+
+  header{
+    position:fixed;top:0;left:0;right:0;z-index:100;
+    display:flex;align-items:center;justify-content:space-between;
+    padding:22px 6vw;
+    background:linear-gradient(180deg, rgba(15,14,12,.92), rgba(15,14,12,0));
+    backdrop-filter:blur(2px);
+  }
+  .brand{
+    font-family:'Cormorant Garamond',serif;
+    font-size:1.5rem;
+    letter-spacing:.06em;
+    color:var(--marble-white);
+  }
+  .brand em{font-style:normal;color:var(--gold);}
+  nav{display:flex;gap:2.4rem;align-items:center;}
+  nav a{
+    font-size:.82rem;letter-spacing:.12em;text-transform:uppercase;
+    color:var(--ivory);opacity:.8;transition:opacity .25s, color .25s;
+    position:relative;
+  }
+  nav a:hover{opacity:1;color:var(--gold);}
+  .call-btn{
+    border:1px solid var(--gold);padding:.55rem 1.3rem;
+    font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;
+    color:var(--gold)!important;opacity:1!important;
+    transition:background .3s, color .3s;
+  }
+  .call-btn:hover{background:var(--gold);color:var(--stone-black)!important;}
+  .menu-toggle{display:none;background:none;border:none;color:var(--marble-white);font-size:1.6rem;cursor:pointer;}
+
+  /* HERO */
+  .hero{
+    position:relative;z-index:1;
+    min-height:100vh;
+    display:flex;flex-direction:column;align-items:center;justify-content:center;
+    text-align:center;padding:0 6vw;
+  }
+  .eyebrow{
+    font-size:.78rem;letter-spacing:.3em;text-transform:uppercase;
+    color:var(--gold);margin-bottom:1.6rem;
+    opacity:0;animation:fadeUp .9s .2s forwards;
+  }
+  .hero h1{
+    font-size:clamp(2.6rem,7vw,6rem);
+    line-height:1.02;color:var(--marble-white);
+    max-width:16ch;
+  }
+  .hero h1 .carve{
+    display:block;
+    background:linear-gradient(90deg, var(--marble-white) 0%, var(--marble-white) var(--reveal,0%), var(--charcoal) var(--reveal,0%));
+    -webkit-background-clip:text;background-clip:text;color:transparent;
+    animation:carveReveal 1.8s cubic-bezier(.65,0,.35,1) .5s forwards;
+  }
+  @keyframes carveReveal{
+    from{--reveal:0%;}
+    to{--reveal:100%;}
+  }
+  .hero .sub{
+    margin-top:1.8rem;font-size:1.05rem;font-weight:300;color:var(--ivory);
+    opacity:0;max-width:42ch;line-height:1.7;
+    animation:fadeUp .9s 1.6s forwards;
+  }
+  .hero .actions{
+    margin-top:2.6rem;display:flex;gap:1.2rem;flex-wrap:wrap;justify-content:center;
+    opacity:0;animation:fadeUp .9s 1.9s forwards;
+  }
+  .btn-primary,.btn-secondary{
+    padding:.95rem 2.1rem;font-size:.82rem;letter-spacing:.12em;text-transform:uppercase;
+    transition:all .3s;
+  }
+  .btn-primary{background:var(--gold);color:var(--stone-black);}
+  .btn-primary:hover{background:var(--ivory);}
+  .btn-secondary{border:1px solid var(--ivory);opacity:.85;}
+  .btn-secondary:hover{opacity:1;border-color:var(--gold);color:var(--gold);}
+  @keyframes fadeUp{
+    from{opacity:0;transform:translateY(16px);}
+    to{opacity:1;transform:translateY(0);}
+  }
+  .scroll-cue{
+    position:absolute;bottom:2.4rem;left:50%;transform:translateX(-50%);
+    font-size:.7rem;letter-spacing:.25em;text-transform:uppercase;color:var(--bronze);
+    opacity:0;animation:fadeUp .9s 2.3s forwards, bob 2.4s 3.2s infinite;
+  }
+  @keyframes bob{0%,100%{transform:translate(-50%,0);}50%{transform:translate(-50%,8px);}}
+
+  section{position:relative;z-index:1;padding:7rem 6vw;}
+  .section-head{max-width:640px;margin-bottom:3.4rem;}
+  .section-head .eyebrow{margin-bottom:1rem;}
+  .section-head h2{font-size:clamp(1.9rem,4vw,3rem);color:var(--marble-white);}
+  .section-head p{margin-top:1rem;color:var(--ivory);opacity:.75;line-height:1.7;font-size:1rem;}
+
+  /* ABOUT */
+  .about{background:var(--stone-black-2);}
+  .about-grid{
+    display:grid;grid-template-columns:1fr 1.1fr;gap:4rem;align-items:center;
+  }
+  .about-stats{display:grid;grid-template-columns:1fr 1fr;gap:2rem;margin-top:2.2rem;}
+  .stat{border-top:1px solid rgba(201,161,90,.35);padding-top:1rem;}
+  .stat .num{font-family:'Cormorant Garamond',serif;font-size:2.6rem;color:var(--gold);}
+  .stat .label{font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;opacity:.7;margin-top:.2rem;}
+  .about-plaque{
+    border:1px solid rgba(201,161,90,.3);padding:2.4rem;
+    background:linear-gradient(160deg, rgba(201,161,90,.05), transparent 60%);
+  }
+  .about-plaque p{line-height:1.85;font-size:1rem;color:var(--ivory);opacity:.9;margin-bottom:1.2rem;}
+  .about-plaque .sig{font-family:'Cormorant Garamond',serif;font-style:italic;color:var(--gold);font-size:1.15rem;}
+
+  /* COLLECTION */
+  .collection-grid{
+    display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.6rem;
+  }
+  .plaque-card{
+    border:1px solid rgba(201,161,90,.22);
+    padding:2.2rem 1.8rem;position:relative;
+    transition:transform .35s, border-color .35s, background .35s;
+    background:rgba(255,255,255,.01);
+  }
+  .plaque-card:hover{transform:translateY(-6px);border-color:var(--gold);background:rgba(201,161,90,.04);}
+  .plaque-card .idx{
+    font-family:'Cormorant Garamond',serif;font-size:.85rem;color:var(--bronze);
+    letter-spacing:.15em;
+  }
+  .plaque-card h3{font-size:1.5rem;margin:.7rem 0 .6rem;color:var(--marble-white);}
+  .plaque-card p{font-size:.9rem;line-height:1.6;opacity:.75;}
+  .plaque-card .tag{
+    display:inline-block;margin-top:1rem;font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;
+    color:var(--gold);border-bottom:1px solid var(--gold);padding-bottom:2px;
+  }
+
+  /* PROCESS */
+  .process{background:var(--stone-black-2);}
+  .process-row{
+    display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem;
+  }
+  .process-step{padding-top:1.6rem;border-top:1px solid rgba(232,220,192,.15);}
+  .process-step .mark{font-family:'Cormorant Garamond',serif;font-size:1.1rem;color:var(--gold);font-style:italic;}
+  .process-step h3{font-size:1.25rem;margin:.6rem 0 .5rem;color:var(--marble-white);}
+  .process-step p{font-size:.88rem;line-height:1.6;opacity:.7;}
+
+  /* GALLERY STRIP */
+  .strip{
+    display:flex;gap:1rem;overflow-x:auto;padding:2rem 6vw;
+    scrollbar-width:thin;scrollbar-color:var(--bronze) transparent;
+  }
+  .strip::-webkit-scrollbar{height:6px;}
+  .strip::-webkit-scrollbar-thumb{background:var(--bronze);}
+  .strip-item{
+    min-width:220px;height:280px;flex-shrink:0;
+    background:linear-gradient(160deg, rgba(201,161,90,.12), rgba(58,55,51,.4));
+    border:1px solid rgba(201,161,90,.25);
+    display:flex;align-items:flex-end;padding:1.2rem;
+    font-family:'Cormorant Garamond',serif;font-size:1.2rem;color:var(--marble-white);
+  }
+
+  /* CONTACT / CTA */
+  .cta{
+    text-align:center;
+    background:radial-gradient(ellipse 800px 400px at 50% 0%, rgba(201,161,90,.08), transparent 70%);
+  }
+  .cta h2{font-size:clamp(2rem,5vw,3.4rem);color:var(--marble-white);max-width:18ch;margin:0 auto;}
+  .cta p{margin:1.4rem auto 2.2rem;max-width:46ch;opacity:.75;line-height:1.7;}
+  .contact-methods{
+    display:flex;gap:2.5rem;justify-content:center;flex-wrap:wrap;margin-top:2.6rem;
+  }
+  .contact-methods a{
+    display:flex;flex-direction:column;align-items:center;gap:.5rem;
+    font-size:.95rem;color:var(--ivory);opacity:.85;transition:opacity .3s,color .3s;
+  }
+  .contact-methods a:hover{opacity:1;color:var(--gold);}
+  .contact-methods .ic{font-size:1.6rem;color:var(--gold);}
+  .contact-methods .val{font-family:'Jost',sans-serif;letter-spacing:.03em;}
+  .map-wrap{
+    max-width:900px;margin:2.4rem auto 3rem;
+    border:1px solid rgba(212,185,122,0.3);overflow:hidden;
+    border-radius:4px;
+  }
+  .map-wrap iframe{width:100%;max-width:600px;height:450px;border:0;display:block;margin:0 auto;filter:grayscale(0.15) contrast(1.05);}
+  @media (max-width:560px){.map-wrap iframe{height:300px;}}
+  .direct-note a{color:var(--gold);text-decoration:underline;}
+  .footer-social{display:flex;gap:1.6rem;justify-content:center;flex-wrap:wrap;}
+  .footer-social a{color:var(--gold);letter-spacing:.05em;text-transform:uppercase;font-size:.78rem;opacity:.9;transition:opacity .25s ease;}
+  .footer-social a:hover{opacity:1;text-decoration:underline;}
+
+  /* CONTACT NOTE */
+  .direct-note{
+    max-width:520px;margin:3rem auto 0;text-align:center;
+    font-size:.92rem;opacity:.65;line-height:1.7;
+  }
+  .form-row{grid-template-columns:1fr;}
+
+  footer{
+    position:relative;z-index:1;
+    border-top:1px solid rgba(201,161,90,.15);
+    padding:3rem 6vw 2rem;
+    display:flex;justify-content:space-between;flex-wrap:wrap;gap:1.5rem;
+    font-size:.82rem;opacity:.6;
+  }
+  footer .fbrand{font-family:'Cormorant Garamond',serif;font-size:1.1rem;color:var(--gold);opacity:1;}
+
+  /* WhatsApp float */
+  .whatsapp-float{
+    position:fixed;bottom:1.8rem;right:1.8rem;z-index:200;
+    width:58px;height:58px;border-radius:50%;
+    background:var(--gold);color:var(--stone-black);
+    display:flex;align-items:center;justify-content:center;
+    font-size:1.6rem;box-shadow:0 8px 24px rgba(0,0,0,.4);
+    transition:transform .3s;
+  }
+  .whatsapp-float:hover{transform:scale(1.08);}
+
+  @media(max-width:900px){
+    .about-grid{grid-template-columns:1fr;}
+    .process-row{grid-template-columns:1fr 1fr;}
+    nav{display:none;}
+    nav.open{
+      display:flex;position:fixed;top:70px;left:0;right:0;background:var(--stone-black);
+      flex-direction:column;padding:2rem 6vw;gap:1.5rem;border-top:1px solid rgba(201,161,90,.2);
+    }
+    .menu-toggle{display:block;}
+  }
+  @media(max-width:600px){
+    .form-row{grid-template-columns:1fr;}
+    .process-row{grid-template-columns:1fr;}
+    .contact-methods{gap:1.6rem;}
+  }
+  @media (prefers-reduced-motion: reduce){
+    *{animation-duration:.01ms !important; animation-iteration-count:1 !important; transition-duration:.01ms !important;}
+  }
+  :focus-visible{outline:2px solid var(--gold);outline-offset:3px;}
+</style>
+</head>
+<body>
+
+<div class="vein-bg"></div>
+<svg class="vein-svg" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" preserveAspectRatio="none">
+  <path d="M0,120 Q300,60 500,150 T900,100 T1400,180" stroke="#c9a15a" stroke-width="1" fill="none"/>
+  <path d="M0,600 Q400,540 700,620 T1400,560" stroke="#c9a15a" stroke-width="1" fill="none"/>
+  <path d="M100,900 Q500,850 800,920 T1400,880" stroke="#c9a15a" stroke-width="1" fill="none"/>
+</svg>
+
+<header>
+  <div class="brand">LE ROYAL <em>KRAFT</em></div>
+  <nav id="nav">
+    <a href="#about">About</a>
+    <a href="#collection">Collection</a>
+    <a href="#process">Craft</a>
+    <a href="#contact">Contact</a>
+    <a href="tel:+919884534540" class="call-btn">Call 98845 34540</a>
+  </nav>
+  <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">&#9776;</button>
+</header>
+
+<section class="hero">
+  <div class="eyebrow">Chennai, India · Since 2003</div>
+  <h1><span class="carve">Marble, given a soul.</span></h1>
+  <p class="sub">Le Royal Kraft crafts, manufactures and exports fine marble statues, idols and handicrafts — carved by hand, finished to last generations.</p>
+  <div class="actions">
+    <a href="#collection" class="btn-primary">View the Collection</a>
+    <a href="tel:+919884534540" class="btn-secondary">Call 98845 34540</a>
+  </div>
+  <div class="scroll-cue">Scroll ↓</div>
+</section>
+
+<section class="about" id="about">
+  <div class="about-grid">
+    <div>
+      <div class="section-head" style="margin-bottom:0;">
+        <div class="eyebrow">About the Firm</div>
+        <h2>Two decades of stone and craft.</h2>
+      </div>
+      <div class="about-stats">
+        <div class="stat"><div class="num">2003</div><div class="label">Established</div></div>
+        <div class="stat"><div class="num">20+</div><div class="label">Years Exporting</div></div>
+        <div class="stat"><div class="num">50+</div><div class="label">Statue Varieties</div></div>
+        <div class="stat"><div class="num">Global</div><div class="label">Reach</div></div>
+      </div>
+    </div>
+    <div class="about-plaque">
+      <p>Le Royal Kraft started operations in 2003 in Chennai, Tamil Nadu, and has grown into a leading manufacturer, supplier, trader and exporter of premium marble statues and handicrafts.</p>
+      <p>Every piece — from Marble Durga and Ganesh statues to custom bust sculptures and temple handicrafts — is shaped by skilled craftsmen using the finest marble sourced from certified vendors, then finished with advanced tools to meet global quality standards.</p>
+      <p class="sig">— The Le Royal Kraft Workshop</p>
+    </div>
+  </div>
+</section>
+
+<section class="collection" id="collection">
+  <div class="section-head">
+    <div class="eyebrow">The Collection</div>
+    <h2>Idols, statues &amp; handicrafts</h2>
+    <p>A curated range of religious, decorative and custom marble work — each piece customizable to your specifications.</p>
+  </div>
+  <div class="collection-grid">
+    <div class="plaque-card">
+      <div class="idx">01</div>
+      <h3>Marble Durga &amp; Ganesh</h3>
+      <p>Hand-finished deity statues in classic and modern styles, carved from the finest white marble.</p>
+      <span class="tag">Religious</span>
+    </div>
+    <div class="plaque-card">
+      <div class="idx">02</div>
+      <h3>Marble Laxmi &amp; Radha Krishna</h3>
+      <p>Intricately detailed idols finished with fine colour work and gold detailing.</p>
+      <span class="tag">Religious</span>
+    </div>
+    <div class="plaque-card">
+      <div class="idx">03</div>
+      <h3>Hanuman &amp; Bajrangbali</h3>
+      <p>Bold sculptural statues ranging from tabletop pieces to temple-scale installations.</p>
+      <span class="tag">Religious</span>
+    </div>
+    <div class="plaque-card">
+      <div class="idx">04</div>
+      <h3>Custom Bust Sculptures</h3>
+      <p>Portrait and figurative busts carved to specification, including European figure styles.</p>
+      <span class="tag">Custom</span>
+    </div>
+    <div class="plaque-card">
+      <div class="idx">05</div>
+      <h3>Marble Temples &amp; Home Mandirs</h3>
+      <p>Makrana marble home temples and handicraft mandirs built for daily worship.</p>
+      <span class="tag">Architecture</span>
+    </div>
+    <div class="plaque-card">
+      <div class="idx">06</div>
+      <h3>Garden &amp; Decorative Articles</h3>
+      <p>Fountains, lanterns, vases and inlay work for gardens and interiors alike.</p>
+      <span class="tag">Decor</span>
+    </div>
+  </div>
+</section>
+
+<div class="strip" aria-label="Gallery strip">
+  <div class="strip-item">Durga Statues</div>
+  <div class="strip-item">Ganesh Idols</div>
+  <div class="strip-item">Radha Krishna</div>
+  <div class="strip-item">Hanuman Sculptures</div>
+  <div class="strip-item">Temple Handicrafts</div>
+  <div class="strip-item">Garden Fountains</div>
+  <div class="strip-item">Custom Busts</div>
+</div>
+
+<section class="process" id="process">
+  <div class="section-head">
+    <div class="eyebrow">Our Process</div>
+    <h2>From block to blessing</h2>
+  </div>
+  <div class="process-row">
+    <div class="process-step">
+      <div class="mark">i.</div>
+      <h3>Sourcing</h3>
+      <p>Marble and stone procured by trained agents from certified, reputed vendors.</p>
+    </div>
+    <div class="process-step">
+      <div class="mark">ii.</div>
+      <h3>Carving</h3>
+      <p>Skilled craftsmen shape each statue using advanced tools and traditional technique.</p>
+    </div>
+    <div class="process-step">
+      <div class="mark">iii.</div>
+      <h3>Finishing</h3>
+      <p>Fine detailing, colour work and polish bring each piece to its final form.</p>
+    </div>
+    <div class="process-step">
+      <div class="mark">iv.</div>
+      <h3>Inspection &amp; Export</h3>
+      <p>Every piece is quality-checked against foreign testing standards before dispatch worldwide.</p>
+    </div>
+  </div>
+</section>
+
+<section class="cta" id="contact">
+  <div class="eyebrow">Get in Touch</div>
+  <h2>Bring a piece of this craft home.</h2>
+  <p>Speak with us directly for pricing, customization or export enquiries.</p>
+
+  <div class="contact-methods">
+    <a href="tel:+919884534540">
+      <span class="ic">&#128222;</span>
+      <span class="val">+91 98845 34540</span>
+    </a>
+    <a href="https://wa.me/919884534540" target="_blank" rel="noopener">
+      <span class="ic">&#128172;</span>
+      <span class="val">WhatsApp Us</span>
+    </a>
+    <a href="mailto:info@leroyalkraft.net">
+      <span class="ic">&#9993;</span>
+      <span class="val">info@leroyalkraft.net</span>
+    </a>
+    <a href="mailto:leroyalkraft@gmail.com">
+      <span class="ic">&#9993;</span>
+      <span class="val">leroyalkraft@gmail.com</span>
+    </a>
+    <a href="#">
+      <span class="ic">&#128205;</span>
+      <span class="val">Chennai, Tamil Nadu</span>
+    </a>
+    <a href="https://www.facebook.com/share/1Airp6YrpD/" target="_blank" rel="noopener">
+      <span class="ic">f</span>
+      <span class="val">Facebook</span>
+    </a>
+    <a href="https://www.instagram.com/leroyalkraft?igsh=bHgzNWVkcXRuNmFo" target="_blank" rel="noopener">
+      <span class="ic">&#128247;</span>
+      <span class="val">Instagram</span>
+    </a>
+    <a href="https://www.linkedin.com/company/le-royal-kraft-pvt-ltd" target="_blank" rel="noopener">
+      <span class="ic">in</span>
+      <span class="val">LinkedIn</span>
+    </a>
+    <a href="https://youtube.com/@leroyalkraft-w6s?si=DsbeFUzwsvAL52IY" target="_blank" rel="noopener">
+      <span class="ic">&#9654;</span>
+      <span class="val">YouTube</span>
+    </a>
+  </div>
+
+  <div class="map-wrap">
+    <iframe
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3886.8151008644354!2d80.25227107507774!3d13.047438387274967!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a5265aadbaaaaab%3A0xa5b98810d743abee!2sLe%20Royal%20Kraft%20%7C%7CMarble%20Statue%2C%20Idols%20%26%20Temples%7C%7C!5e0!3m2!1sen!2sin!4v1784871151209!5m2!1sen!2sin"
+      width="600" height="450"
+      style="border:0;"
+      allowfullscreen=""
+      loading="lazy"
+      referrerpolicy="strict-origin-when-cross-origin"
+      title="Le Royal Kraft location map">
+    </iframe>
+  </div>
+
+  <p class="direct-note">Prefer to reach us directly? Call, WhatsApp, or email using the links above — we typically respond within 24 hours.<br>More about our full range at <a href="https://www.leroyalkraft.net" target="_blank" rel="noopener">leroyalkraft.net</a></p>
+</section>
+
+<footer>
+  <div>
+    <div class="fbrand">LE ROYAL KRAFT</div>
+    <div>Manufacturer · Supplier · Exporter of Marble Statues &amp; Handicrafts</div>
+  </div>
+  <div class="footer-social">
+    <a href="https://www.facebook.com/share/1Airp6YrpD/" target="_blank" rel="noopener" aria-label="Le Royal Kraft on Facebook">Facebook</a>
+    <a href="https://www.instagram.com/leroyalkraft?igsh=bHgzNWVkcXRuNmFo" target="_blank" rel="noopener" aria-label="Le Royal Kraft on Instagram">Instagram</a>
+    <a href="https://www.linkedin.com/company/le-royal-kraft-pvt-ltd" target="_blank" rel="noopener" aria-label="Le Royal Kraft on LinkedIn">LinkedIn</a>
+    <a href="https://youtube.com/@leroyalkraft-w6s?si=DsbeFUzwsvAL52IY" target="_blank" rel="noopener" aria-label="Le Royal Kraft on YouTube">YouTube</a>
+  </div>
+  <div>Chennai, Tamil Nadu, India</div>
+  <div>&copy; <span id="year"></span> Le Royal Kraft. All rights reserved.</div>
+</footer>
+
+<a href="https://wa.me/919884534540" class="whatsapp-float" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">&#128172;</a>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  const menuToggle = document.getElementById('menuToggle');
+  const nav = document.getElementById('nav');
+  menuToggle.addEventListener('click', () => nav.classList.toggle('open'));
+  nav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => nav.classList.remove('open')));
+</script>
+
+</body>
+</html>
